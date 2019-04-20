@@ -1,5 +1,7 @@
 {
   "name": "giaotieptiengtrung",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
