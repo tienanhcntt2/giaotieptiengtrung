@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Database } from '../data/database';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms'
 export class LoginPage implements OnInit {
 
   ngForm : FormGroup;
-
+  private database: Database;
   constructor(private formbuilder: FormBuilder) { 
 
   }
@@ -26,6 +27,7 @@ export class LoginPage implements OnInit {
   }
   login(){
     
+
   }
 
 }
