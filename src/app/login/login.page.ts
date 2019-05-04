@@ -45,5 +45,7 @@ export class LoginPage implements OnInit {
       this.show = true;
     }
   }
-
+  functionRegister(){
+    this.router.navigateByUrl("register");
+  }
 }
