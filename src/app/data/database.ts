@@ -7,6 +7,9 @@ import { Config } from '../util/Config';
 export class Database {
 
     theConsole: string = "Console Messages";
+    table_user: string = "create table user (idUser int NOT NULL AUTO_INCREMENT,username VARCHAR(255), password VARCHAR(255), email varchar(255))"
+    table_cont: string = "create table conts (id int NOT NULL AUTO_INCREMENT,username varchar(255), date datetime, conts integer(10), leve integer(10)," +
+        +"question integer(10))";
 
     options: any = {
         name: 'data.db',
@@ -19,53 +22,52 @@ export class Database {
 
     constructor(private sqlite: SQLite) {
 
-        this.connectToDb();
     }
-    
-    private connectToDb():void {
-       
+
+    public connectToDb(): void {
+
         this.sqlite.create(this.options)
             .then((db: SQLiteObject) => {
-   
+
                 this.db = db;
-               // var sql = 'create table IF NOT EXISTS `user` (username VARCHAR(255), password VARCHAR(255))';
-                //IF you move the below statment out of here then the db variable will not be initialized
-                //before you can use it to execute the SQL. 
-                 this.db.executeSql(this.config.tb_user, [])
-                .then(() => this.theConsole += 'Executed SQL' + this.config.tb_user)
-                .catch(e => this.theConsole += "Error: " + JSON.stringify(e));
+                this.db.executeSql(this.table_user, []),
+                    this.db.executeSql(this.table_cont, [])
+                        .then(() => this.theConsole += 'Executed SQL' + this.config.tb_user)
+                        .catch(e => this.theConsole += "Error: " + JSON.stringify(e));
             })
             .catch(e => this.theConsole += JSON.stringify(e));
+
+    }
+    public createTable(): void{
         
     }
-   
-     addUser(username, password):void {
-       
-        var sql = "INSERT INTO `user` (username,password) VALUES ('"+username+"','"+ password+"')";
-       
-        this.db.executeSql(sql,[])
-        .then(() => this.theConsole += "\n" + 'Executed SQL' + sql)
-        .catch(e => this.theConsole += "Error: " + JSON.stringify(e));
-    
-         
+
+    addUser(username, password, email): void {
+
+        var sql = "INSERT INTO `user` (username,password,email) VALUES ('" + username + "','" + password + "', '" + email + "')";
+
+        this.db.executeSql(sql, [])
+            .then(() => this.theConsole += "\n" + 'Executed SQL' + sql)
+            .catch(e => this.theConsole += "Error: " + JSON.stringify(e));
+
     }
     getDealer() {
         var sql = "SELECT * FROM user";
-        
+
         this.db.executeSql(sql, [])
             .then((result) => {
                 this.theConsole += JSON.stringify(result);
                 if (result.rows.length > 0) {
                     this.theConsole += 'Result' + result.rows.item(0);
                 }
-                this.theConsole += "\n" + result.rows.item(0).username+ result.rows.item(0).password;
-                this.theConsole +=  "\n" +'Rows' + result.rows.length;
-               
+                this.theConsole += "\n" + result.rows.item(0).username + result.rows.item(0).password;
+                this.theConsole += "\n" + 'Rows' + result.rows.length;
+
             })
-   
+
             .catch(e => this.theConsole += JSON.stringify(e));
     }
-   
+
     getConsoleMessages() {
         return this.theConsole;
     }
