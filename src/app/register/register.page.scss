@@ -1,0 +1,45 @@
+ion-content{
+    --background:#424242;
+}
+ion-card{
+    padding: 10px;
+     height: 50%;
+     width: 100%;
+     margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  ion-label{
+     text-transform: uppercase;
+     --color:black;
+     text-align: center;
+  }
+}
+form{
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    
+    position: absolute;
+}
+ion-item{
+    margin-top: 20px;
+}
+ion-icon{
+    padding-right: 20px;
+}
+div h3{
+    font-size: 14px;
+    color: red;
+    font-family: 'Itim', cursive;
+}
+div h1{
+    font-size: 60px;
+    color: white;  
+    font-family: 'Luminari', fantasy;
+}
+

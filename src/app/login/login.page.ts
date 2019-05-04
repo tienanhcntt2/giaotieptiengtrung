@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Database } from '../data/database';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { DatabaseProvider } from '../data/DatabaseProvider';
+import { User } from '../model/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,25 +13,39 @@ import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms'
 })
 export class LoginPage implements OnInit {
 
-  formLogin : FormGroup;
+  ngForm : FormGroup;
+ 
+  db: DatabaseProvider;
+  user : User;
+  show: boolean = false;
+  constructor(private formbuilder: FormBuilder, private router:Router) { 
 
-  constructor(private formbuilder: FormBuilder) { 
-
+    
+   //this.db.insertUser(this.user);
   }
 
   ngOnInit() {
-    this.formLogin = this.formbuilder.group({
-      email: ['', Validators.required],
+    this.ngForm = this.formbuilder.group({
+      user: ['', Validators.required],
       password: ['', Validators.required]
 
     });
   }
   get loginForm(){
-    return this.formLogin.controls;
+    return this.ngForm.controls;
   }
-  onSubmit(){
-    alert("hello : " +this.loginForm.email.value);
-
+  login(){
+    
+    //this.database.addUser(this.loginForm.email.value,this.loginForm.password.value);
+    if(this.loginForm.user.value ==="tienanh" && this.loginForm.password.value ==="tienanh"){
+      this.router.navigateByUrl("home");
+      
+      this.show = false;
+    }else{
+      this.show = true;
+    }
   }
-
+  functionRegister(){
+    this.router.navigateByUrl("register");
+  }
 }

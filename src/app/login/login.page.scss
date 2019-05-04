@@ -40,7 +40,7 @@ form{
     margin: 0;
     
     position: absolute;
-    top: 50%;
+    top: 30%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
@@ -51,6 +51,13 @@ ion-icon{
     padding-right: 20px;
 }
 div h3{
-    font-size: 30px;
-    color: white;
+    font-size: 14px;
+    color: red;
+    font-family: 'Itim', cursive;
 }
+div h1{
+    font-size: 60px;
+    color: white;  
+    font-family: 'Luminari', fantasy;
+}
+
