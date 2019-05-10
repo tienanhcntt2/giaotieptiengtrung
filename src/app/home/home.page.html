@@ -1,14 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title text-center>
+      Giao Tiep Tieng Trung
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-grid>
+    <!-- row 1 -->
+    <ion-row>
+      <ion-col>
+        <ion-button class="circle">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+          
+        </ion-button>
+        <ion-label >水平一</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-button class="circle">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+        </ion-button>
+        <ion-label >水平二</ion-label>
+      </ion-col>
+
+    </ion-row>
+    <!-- row 2 -->
+    <ion-row>
+      <ion-col>
+        <ion-button class="circle">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+        </ion-button>
+        <ion-label >水平三</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-button class="circle">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+        </ion-button>
+        <ion-label >水平四</ion-label>
+      </ion-col>
+
+    </ion-row>
+    <!-- row 3 -->
+    <ion-row>
+      <ion-col>
+        <ion-button class="circle">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+        </ion-button>
+        <ion-label >生词</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-button class="circle" (click) ="setting()">
+          <ion-icon slot="icon-only" src="../../assets/icon/ic_study.svg"></ion-icon>
+        </ion-button>
+        <ion-label >设置</ion-label>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
