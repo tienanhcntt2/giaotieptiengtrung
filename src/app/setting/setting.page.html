@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{title }}</ion-label>
+    <ion-select  value ="vn" [(ngModel)]="lang" (ionChange)="switchLanguage()">
+      <ion-select-option value="vn">VietNames</ion-select-option>
+      <ion-select-option value="en">English</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>

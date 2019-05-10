@@ -5,6 +5,7 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import { DatabaseProvider } from '../data/DatabaseProvider';
 import { User } from '../model/User';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -18,13 +19,16 @@ export class LoginPage implements OnInit {
   db: DatabaseProvider;
   user : User;
   show: boolean = false;
-  constructor(private formbuilder: FormBuilder, private router:Router) { 
-
+  lang: any;
+  constructor(private formbuilder: FormBuilder, private router:Router,public translate: TranslateService) { 
+    
     
    //this.db.insertUser(this.user);
   }
 
   ngOnInit() {
+    this.checkLang();
+    this.showLang();
     this.ngForm = this.formbuilder.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
@@ -47,5 +51,16 @@ export class LoginPage implements OnInit {
   }
   functionRegister(){
     this.router.navigateByUrl("register");
+  }
+  // show language
+  private showLang(){
+    this.lang = localStorage.getItem("lang");
+    this.translate.setDefaultLang(this.lang);
+    this.translate.use(this.lang);
+  }
+  private checkLang(){
+    if(localStorage.getItem("lang") === null){
+      localStorage.setItem("lang","vn");
+    }
   }
 }
