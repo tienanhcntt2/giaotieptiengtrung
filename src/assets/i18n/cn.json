@@ -1,0 +1,30 @@
+{
+ 
+    
+    "Setting" :{
+        "title": "环境",
+        "selectlanguage": "选择语言",
+        "review": "回顾",
+        "version": "版本",
+        "shareApp": "分享应用",
+        "txt_select_bg": "选择背景",
+        "txt_uninstall" :"卸载",
+        "txt_pinjin": "拼音显示",
+        "txt_version" :"版本",
+        "txt_share" : "分享应用",
+        "txt_review" :"反馈"
+
+
+    },
+
+    "HOME" :{
+        "txt_title": "中国人的交流",
+        "txt_level_1":"水平一",
+        "txt_level_2":"水平二",
+        "txt_level_3":"水平三",
+        "txt_level_4":"水平四",
+        "txt_vocabulary" :"词汇",
+        "txt_setting" :"设置"
+    }  
+
+}

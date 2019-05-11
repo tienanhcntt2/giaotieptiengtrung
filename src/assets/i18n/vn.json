@@ -4,11 +4,26 @@
     "Setting" :{
         "title": "Cài đặt",
         "selectlanguage": "Chọn ngôn ngữ",
-        "review": "Review",
-        "version": "Version",
-        "shareApp": "Share App"
+        "review": "Đánh giá",
+        "version": "Phiên bản",
+        "shareApp": "Chia sẻ ứng dụng",
+        "txt_select_bg": "Chọn nền",
+        "txt_uninstall": "Gỡ cài đặt",
+        "txt_pinjin": "Hiện thị pinyin",
+        "txt_version" :"Phiên bản",
+        "txt_share" : "Chia sẻ ứng dụng",
+        "txt_review" :"Phản hồi"
 
-    }
+    },
+    "HOME" :{
+        "txt_title": "Tiếng trung giao tiếp",
+        "txt_level_1":"Cấp 1",
+        "txt_level_2":"Cấp 2",
+        "txt_level_3":"Cấp 3",
+        "txt_level_4":"Cấp 4",
+        "txt_vocabulary" :"Từ vựng",
+        "txt_setting" :"Cài đặt"
+    } 
         
 
 }
