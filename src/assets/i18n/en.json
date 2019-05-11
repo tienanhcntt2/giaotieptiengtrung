@@ -6,8 +6,23 @@
         "selectlanguage": "Select language",
         "review": "Review",
         "version": "Version",
-        "shareApp": "Share App"
+        "shareApp": "Share App",
+        "txt_select_bg": "Select background",
+        "txt_uninstall" :"uninstall",
+        "txt_pinjin": "Pinyin display",
+        "txt_version" :"Version",
+        "txt_share" : "Share App",
+        "txt_review" :"feedback"
 
+    },
+    "HOME" :{
+        "txt_title": "Chinese communication",
+        "txt_level_1":"Level 1",
+        "txt_level_2":"Level 2",
+        "txt_level_3":"Level 3",
+        "txt_level_4":"Level 4",
+        "txt_vocabulary" :"Vocabulary",
+        "txt_setting" :"Setting"
     }
         
 

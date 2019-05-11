@@ -62,5 +62,8 @@ export class LoginPage implements OnInit {
     if(localStorage.getItem("lang") === null){
       localStorage.setItem("lang","vn");
     }
+    if(localStorage.getItem("pinjin") === null){
+      localStorage.setItem("pinjin","true");
+    }
   }
 }

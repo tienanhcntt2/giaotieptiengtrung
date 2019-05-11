@@ -1,16 +1,48 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Setting</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{txt_title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background:{{bg_content}}">
   <ion-item>
-    <ion-label>{{title }}</ion-label>
-    <ion-select  value ="vn" [(ngModel)]="lang" (ionChange)="switchLanguage()">
+    <ion-label>{{txt_select_lg }}</ion-label>
+    <ion-select value="vn" [(ngModel)]="lang" (ionChange)="switchLanguage()">
       <ion-select-option value="vn">VietNames</ion-select-option>
       <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="cn">中文</ion-select-option>
     </ion-select>
   </ion-item>
 
+  <ion-item>
+    <ion-label>{{txt_select_bg }}</ion-label>
+    <ion-select value="#333333" [(ngModel)]="bg_content" (ionChange) ="selectBg()">
+      <ion-select-option value="#333333">#333333</ion-select-option>
+      <ion-select-option value="#FFCC33">#FFCC33</ion-select-option>
+      <ion-select-option value="#00CCFF">#00CCFF</ion-select-option>
+      <ion-select-option value="#00CC00">#00CC00</ion-select-option>
+      <ion-select-option value="#FF66FF">#FF66FF</ion-select-option>
+      <ion-select-option value="#666600">#666600</ion-select-option>
+      <ion-select-option value="#001100">#001100</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{txt_pinjin}}</ion-label>
+    <ion-toggle [(ngModel)]="pinjin" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+  <ion-item>
+      <ion-label>{{txt_version}}</ion-label>
+      <ion-note slot="end">{{version}}</ion-note>
+    </ion-item>
+    <ion-item>
+        <ion-label>{{txt_share}}</ion-label>
+        <ion-note slot="end"><ion-icon name="share"></ion-icon></ion-note>
+      </ion-item>
+      <ion-item>
+          <ion-label>{{txt_review}}</ion-label>
+          <ion-note slot="end"><ion-icon name="mail-open"></ion-icon></ion-note>
+        </ion-item>
 </ion-content>
