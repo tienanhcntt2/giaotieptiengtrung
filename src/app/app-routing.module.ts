@@ -5,9 +5,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'study', loadChildren: './study/study.module#StudyPageModule' },
+
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },  { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+  { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
+  { path: 'level', loadChildren: './level/level.module#LevelPageModule' },
 
 ];
 

@@ -54,4 +54,7 @@ export class HomePage implements OnInit {
       this.txt_title = this.translate.instant("HOME.txt_title");
     }, 250);
   }
+  clickLevel(): void{
+    this.router.navigateByUrl("level");
+  }
 }
