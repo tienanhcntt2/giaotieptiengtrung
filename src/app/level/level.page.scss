@@ -14,9 +14,19 @@ ion-item{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border: aqua 1px solid;
+    border-bottom: none;
 }
 ion-card{
     padding: 10px;
+    margin-bottom: 20px;
     --background: white;
+}
+ion-label{
+    width: 100%;
+    text-align: center;
+    
+   
+}
+ion-icon {
+    width: 33%;
 }
