@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceData } from '../util/ServiceData';
 import { Giaotiep } from '../model/giaotiep';
 import { first } from 'rxjs/internal/operators/first';
+import { Alert } from 'selenium-webdriver';
 @Component({
   selector: 'app-level',
   templateUrl: './level.page.html',
@@ -11,9 +12,10 @@ export class LevelPage implements OnInit {
 
   private nameLevel: string;
   private url:string ="../../assets/data/giaotiep.json";
-  private mPosition: number = 1;
-  private mData: Giaotiep[] =[];
-  private giaotiep: Giaotiep;
+  private mPosition: number = 0;
+  private mData: Giaotiep[] = [];
+  private giaotiep: Giaotiep = new Giaotiep();
+  private checkPre: boolean = true;
   
   /**
    * 
@@ -24,7 +26,9 @@ export class LevelPage implements OnInit {
   ngOnInit() {
     this.nameLevel = "Level1"
     this.getData();
-    this.showData();
+    if(this.mPosition <= 0){
+      this.checkPre = false;
+    }
   }
 
   /**
@@ -33,14 +37,31 @@ export class LevelPage implements OnInit {
   private getData(){
     this.serviceData.getdata(this.url).pipe(first()).subscribe(info => {      
        this.mData = info;
-       console.log("anhtt : " +info[1].tiengtrung);
+       this.giaotiep = this.mData[this.mPosition]
+       
     })
   }
-
-  private showData(){
+  /**
+   * function click next
+   */
+  next(){
+    this.mPosition += 1;
+    if(this.mPosition > 0){
+      this.checkPre = true;
+    }
+  
     this.giaotiep = this.mData[this.mPosition];
-    // console.log("anhtt : " +this.giaotiep.tiengtrung);
   }
-
+  /**
+   * function click preview
+   */
+  pre(){
+   
+    this.mPosition -= 1;
+    if(this.mPosition <= 0){
+      this.checkPre = false;
+    }
+    this.giaotiep = this.mData[this.mPosition];
+  }
 
 }
