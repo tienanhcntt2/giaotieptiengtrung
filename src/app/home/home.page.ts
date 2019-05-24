@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,8 @@ export class HomePage implements OnInit {
 
 
 
-  constructor(public router: Router, public translate: TranslateService, public platform: Platform) {
+  constructor(public router: Router, public translate: TranslateService, public platform: Platform,
+    public nav: NavController) {
     if(localStorage.getItem("bg") === null){
       localStorage.setItem("bg","#333333");
     }
@@ -54,7 +55,29 @@ export class HomePage implements OnInit {
       this.txt_title = this.translate.instant("HOME.txt_title");
     }, 250);
   }
+  /**
+   * change level
+   */
   clickLevel(): void{
-    this.router.navigateByUrl("level");
+    //this.router.navigateByUrl("level");
+    this.router.navigate(['/level', { level: 1, nameLevel : this.txt_level1 }]);
+  }
+  /**
+   * change level
+   */
+  clickLevel2(){
+    this.router.navigate(['/level', { level: 2, nameLevel : this.txt_level2 }]);
+  }
+  /**
+   * change level
+   */
+  clickLevel3(){
+    this.router.navigate(['/level', { level: 3, nameLevel : this.txt_level3 }]);
+  }
+  /**
+   * change level
+   */
+  clickLevel4(){
+    this.router.navigate(['/level', { level: 4, nameLevel : this.txt_level4 }]);
   }
 }

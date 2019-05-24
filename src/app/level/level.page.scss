@@ -28,6 +28,7 @@ ion-label{
     text-align: center;
     font-size: 18px !important;
    
+   
 }
 ion-icon {
     width: 33%;
@@ -60,4 +61,8 @@ ion-icon {
   }
   .btn:hover {
     background-color: RoyalBlue;
+  }
+  .volume{
+      --background: aqua;
+      padding: 10px;
   }

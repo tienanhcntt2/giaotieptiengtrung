@@ -14,7 +14,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { Clipboard } from '@ionic-native/clipboard/ngx';
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -40,6 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
      SQLite,
+     Clipboard,
+     TextToSpeech,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
    
   ],

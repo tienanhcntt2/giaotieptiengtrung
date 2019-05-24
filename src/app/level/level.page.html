@@ -11,15 +11,15 @@
 
   <ion-card>
    <ion-item lines="none">
-     <ion-label text-wrap >
+     <ion-label text-wrap style=" font-weight: bold;" >
       {{giaotiep.tiengtrung}}
      </ion-label>
    </ion-item>
 
    <ion-item lines="none" class="box_effect">
-    <ion-icon name="volume-high"></ion-icon>
+    <ion-icon name="volume-high" class="volume" (click) ="speak()"></ion-icon>
     <ion-icon name="thumbs-up"></ion-icon>
-    <ion-icon name="add-circle"></ion-icon>
+    <ion-icon name="copy" (click) ="coppy()"></ion-icon>
    </ion-item>
    
  
@@ -43,11 +43,11 @@
 
     <ion-button (click) ="pre()" *ngIf="checkPre">
         <ion-img src ="../assets/icon/back.png" ></ion-img>
-      Preview
+ 
     </ion-button>
     <ion-button (click) ="next()">
         <ion-img src ="../assets/icon/next.png" ></ion-img>
-        Next
+
     </ion-button>
     
   </ion-item>
