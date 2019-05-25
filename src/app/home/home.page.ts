@@ -80,4 +80,7 @@ export class HomePage implements OnInit {
   clickLevel4(){
     this.router.navigate(['/level', { level: 4, nameLevel : this.txt_level4 }]);
   }
+  vocabulary(){
+    this.router.navigateByUrl("vocabulary");
+  }
 }

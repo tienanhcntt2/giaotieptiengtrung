@@ -26,12 +26,15 @@ ion-card{
 ion-label{
     width: 100%;
     text-align: center;
-    font-size: 18px !important;
+    font-size: 18px;
    
    
 }
 ion-icon {
     width: 33%;
+    &.red {
+        color: red;
+      }
 }
 .functionClick{
     width: 80%;
@@ -62,7 +65,4 @@ ion-icon {
   .btn:hover {
     background-color: RoyalBlue;
   }
-  .volume{
-      --background: aqua;
-      padding: 10px;
-  }
+  

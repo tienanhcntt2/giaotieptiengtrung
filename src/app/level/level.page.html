@@ -11,20 +11,20 @@
 
   <ion-card>
    <ion-item lines="none">
-     <ion-label text-wrap style=" font-weight: bold;" >
+     <ion-label text-wrap style=" font-weight: bold; font-size: 25px;" >
       {{giaotiep.tiengtrung}}
      </ion-label>
    </ion-item>
 
    <ion-item lines="none" class="box_effect">
-    <ion-icon name="volume-high" class="volume" (click) ="speak()"></ion-icon>
-    <ion-icon name="thumbs-up"></ion-icon>
+    <ion-icon class="red" src="../assets/icon/speaker.svg" (click) ="speak()"></ion-icon>
+    <ion-icon src="{{iconLike}}" (click) ="likeItem()"></ion-icon>
     <ion-icon name="copy" (click) ="coppy()"></ion-icon>
    </ion-item>
    
  
   </ion-card>
-  <ion-card>
+  <ion-card *ngIf="showPinjin">
     <ion-item lines="none">
       <ion-label text-wrap>
         {{giaotiep.pinjin}}
@@ -42,11 +42,12 @@
   <ion-item class="functionClick" lines="none" >
 
     <ion-button (click) ="pre()" *ngIf="checkPre">
-        <ion-img src ="../assets/icon/back.png" ></ion-img>
- 
+     
+        <ion-img  slot="start" src ="../assets/icon/back.png" ></ion-img>
+      
     </ion-button>
     <ion-button (click) ="next()">
-        <ion-img src ="../assets/icon/next.png" ></ion-img>
+        <ion-img slot="end"src ="../assets/icon/next.png" ></ion-img>
 
     </ion-button>
     
