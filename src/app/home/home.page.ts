@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,11 @@ export class HomePage implements OnInit {
 
 
 
-  constructor(public router: Router, public translate: TranslateService, public platform: Platform) {
+  constructor(public router: Router, public translate: TranslateService, public platform: Platform,
+    public nav: NavController,public toastController: ToastController) {
+      if(localStorage.getItem("level") === null){
+        localStorage.setItem("level","1");
+      }
     if(localStorage.getItem("bg") === null){
       localStorage.setItem("bg","#333333");
     }
@@ -54,7 +58,55 @@ export class HomePage implements OnInit {
       this.txt_title = this.translate.instant("HOME.txt_title");
     }, 250);
   }
+  /**
+   * change level
+   */
   clickLevel(): void{
-    this.router.navigateByUrl("level");
+    //this.router.navigateByUrl("level");
+    this.router.navigate(['/level', { level: 1, nameLevel : this.txt_level1 }]);
+  }
+  /**
+   * change level
+   */
+  clickLevel2(){
+    if(parseInt(localStorage.getItem("level")) >= 2){
+      this.router.navigate(['/level', { level: 2, nameLevel : this.txt_level2 }]);
+    }else{
+     this.showToast("ban chua hoc qua level truoc do");
+    }
+    
+  }
+  /**
+   * change level
+   */
+   clickLevel3(){
+    if(parseInt(localStorage.getItem("level")) >= 3){
+      this.router.navigate(['/level', { level: 3, nameLevel : this.txt_level3 }]);
+    }else{
+      this.showToast("ban chua hoc qua level truoc do");
+    }
+   
+  }
+  /**
+   * change level
+   */
+  clickLevel4(){
+    if(parseInt(localStorage.getItem("level")) >= 4){
+      this.router.navigate(['/level', { level: 4, nameLevel : this.txt_level4 }]);
+    }else{
+      this.showToast("ban chua hoc qua level truoc do");
+    }
+   
+    
+  }
+  vocabulary(){
+    this.router.navigateByUrl("vocabulary");
+  }
+  async showToast(message : string){
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
   }
 }

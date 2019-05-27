@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
-  { path: 'level', loadChildren: './level/level.module#LevelPageModule' },
+  { path: 'level', loadChildren: './level/level.module#LevelPageModule' },  { path: 'vocabulary', loadChildren: './vocabulary/vocabulary.module#VocabularyPageModule' },
+
 
 ];
 

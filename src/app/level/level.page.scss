@@ -16,17 +16,53 @@ ion-item{
     margin-right: auto;
     border-bottom: none;
 }
+   
 ion-card{
     padding: 10px;
     margin-bottom: 20px;
+  
     --background: white;
 }
 ion-label{
     width: 100%;
     text-align: center;
-    
+    font-size: 18px;
+   
    
 }
 ion-icon {
     width: 33%;
+    &.red {
+        color: red;
+      }
 }
+.functionClick{
+    width: 80%;
+    margin-left: auto;
+    --background:#333333;
+    padding: 20px;
+    margin-right: auto;
+   
+    ion-button{
+        width: 50%;
+        height: 50px;
+        
+    }
+}
+.box_effect{
+    -moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 20px #000000;
+}
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+  
