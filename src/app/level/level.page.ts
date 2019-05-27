@@ -20,9 +20,9 @@ export class LevelPage implements OnInit {
   private mData: Giaotiep[] = [];
   private giaotiep: Giaotiep = new Giaotiep();
   private checkPre: boolean = true;
-  private showPinjin : boolean = true;
+  private showPinjin: boolean = true;
   private numberClick: number = 0;
-  private iconLike: string ="../assets/icon/heart_up.svg";
+  private iconLike: string = "../assets/icon/heart_up.svg";
   /**
    * 
    * @param serviceData 
@@ -79,7 +79,7 @@ export class LevelPage implements OnInit {
    * function click next
    */
   next() {
-   
+
     switch (this.mNumberLevel) {
       case 1:
         this.savePosition(0, 200, 1);
@@ -105,30 +105,30 @@ export class LevelPage implements OnInit {
   pre() {
 
     this.mPosition -= 1;
-    
+
     switch (this.mNumberLevel) {
       case 1:
-          if (this.mPosition <= 0) {
-            this.checkPre = false;
-          }
+        if (this.mPosition <= 0) {
+          this.checkPre = false;
+        }
         break;
       case 2:
-          if (this.mPosition <= 200) {
-            this.checkPre = false;
-          }
+        if (this.mPosition <= 200) {
+          this.checkPre = false;
+        }
         break;
       case 3:
-          if (this.mPosition <= 400) {
-            this.checkPre = false;
-          }
+        if (this.mPosition <= 400) {
+          this.checkPre = false;
+        }
         break;
       case 4:
-          if (this.mPosition <= 600) {
-            this.checkPre = false;
-          }
+        if (this.mPosition <= 600) {
+          this.checkPre = false;
+        }
         break;
     }
-    
+
     this.giaotiep = this.mData[this.mPosition];
   }
 
@@ -171,28 +171,28 @@ export class LevelPage implements OnInit {
     if (this.mPosition >= position) {
       this.checkPre = true;
     } else if (this.mPosition >= maxPosition) {
-      alert("ban da qua cap " + level);
+      localStorage.setItem("level", "" + level);
     }
     localStorage.setItem("position" + level, "" + this.mPosition);
 
     this.giaotiep = this.mData[this.mPosition];
-    console.log("anhtt : " + position + " " + maxPosition + " " + level + " " + this.mPosition);
+
   }
-  private checkShowPinjin(){
-    if(localStorage.getItem("pinjin") ==="true"){
+  private checkShowPinjin() {
+    if (localStorage.getItem("pinjin") === "true") {
       this.showPinjin = true;
-    }else{
+    } else {
       this.showPinjin = false;
     }
-    
+
   }
 
-  likeItem(){
-     this.numberClick += 1;
-     if(this.numberClick %2 != 0){
+  likeItem() {
+    this.numberClick += 1;
+    if (this.numberClick % 2 != 0) {
       this.iconLike = "../assets/icon/heart.svg";
-     }else{
-       this.iconLike = "../assets/icon/heart_up.svg";
-     }
+    } else {
+      this.iconLike = "../assets/icon/heart_up.svg";
+    }
   }
 }
