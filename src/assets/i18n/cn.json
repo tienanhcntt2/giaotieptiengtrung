@@ -24,7 +24,11 @@
         "txt_level_3":"水平三",
         "txt_level_4":"水平四",
         "txt_vocabulary" :"词汇",
-        "txt_setting" :"设置"
-    }  
+        "txt_setting" :"设置",
+        "txt_message" :"你还没通过先水平"
+    }  ,
+    "level":{
+        "txt_message" :"你还没通过先水平"
+    }
 
 }

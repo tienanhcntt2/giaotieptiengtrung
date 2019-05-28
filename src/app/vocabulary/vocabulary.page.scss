@@ -10,3 +10,23 @@ ion-header{
 ion-content{
     --background:#333333;
 }
+ion-item{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: none;
+}
+   
+ion-card{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  
+    --background: white;
+}
+ion-label{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+   --ion-text-color: blue;
+}

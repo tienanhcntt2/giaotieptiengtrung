@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SavelLove } from '../util/savelove';
+import { Love } from '../model/love';
 
 @Component({
   selector: 'app-vocabulary',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VocabularyPage implements OnInit {
 
-  constructor() { }
+  private mData : Love[] =[];
+  constructor(public savelove: SavelLove) { }
 
   ngOnInit() {
+    this.savelove.getAll().subscribe(data =>{
+      this.mData = data;
+    })
   }
-
+  removeItem(data){
+    let index = this.mData.indexOf(data);
+    let id = data.id;
+    
+    if(index >-1){
+      this.mData.splice(index, 1);
+      this.savelove.delete(id).subscribe();
+    }
+   
+  }
 }

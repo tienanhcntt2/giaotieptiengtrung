@@ -22,8 +22,12 @@
         "txt_level_3":"Cấp 3",
         "txt_level_4":"Cấp 4",
         "txt_vocabulary" :"Từ vựng",
-        "txt_setting" :"Cài đặt"
-    } 
+        "txt_setting" :"Cài đặt",
+        "txt_message" :"Bạn chưa vượt qua cấp độ đầu tiên"
+    }   ,
+    "level":{
+        "txt_message" :"Bạn chưa vượt qua cấp độ đầu tiên"
+    }
         
 
 }

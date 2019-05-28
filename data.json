@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "love": [
+    {
+      "STT": "1",
+      "tiengtrung": "你好！",
+      "tiengviet": "Xin chào!",
+      "pinjin": "nǐ hǎo ",
+      "id": 1
+    },
+    {
+      "STT": "3",
+      "tiengtrung": "我是凯西．金。",
+      "tiengviet": "Tôi là Kathy King.",
+      "pinjin": "wǒ shì kǎi xī jīn 。",
+      "id": 2
+    },
+    {
+      "STT": "5",
+      "tiengtrung": "是，我是。/ 不，我不是。",
+      "tiengviet": "Vâng, tôi là Peter Smith. Không, tôi không phải Peter Smith.",
+      "pinjin": "shì ，wǒ shì 。/ bù ，wǒ bú shì 。",
+      "id": 3
+    },
+    {
+      "STT": "6",
+      "tiengtrung": "你好吗？",
+      "tiengviet": "Bạn khỏe không?",
+      "pinjin": "nǐ hǎo ma ？",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

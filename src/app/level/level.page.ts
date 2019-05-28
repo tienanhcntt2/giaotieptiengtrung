@@ -5,6 +5,8 @@ import { first } from 'rxjs/internal/operators/first';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 import { ActivatedRoute } from '@angular/router';
+import { SavelLove } from '../util/savelove';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-level',
@@ -23,12 +25,13 @@ export class LevelPage implements OnInit {
   private showPinjin: boolean = true;
   private numberClick: number = 0;
   private iconLike: string = "../assets/icon/heart_up.svg";
+  private idLove: boolean = false;
   /**
    * 
    * @param serviceData 
    */
   constructor(public serviceData: ServiceData, public clipboard: Clipboard, private tts: TextToSpeech,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute, public savelove: SavelLove, public toastController: ToastController) { }
 
   ngOnInit() {
     this.nameLevel = "Level1"
@@ -41,7 +44,7 @@ export class LevelPage implements OnInit {
       this.checkPre = false;
     }
     this.checkShowPinjin();
-
+    //this.checkSaveLove();
   }
 
   private getLevel(level: number) {
@@ -72,7 +75,7 @@ export class LevelPage implements OnInit {
     this.serviceData.getdata(this.url).pipe(first()).subscribe(info => {
       this.mData = info;
       this.giaotiep = this.mData[this.mPosition]
-
+      this.checkSaveLove();
     })
   }
   /**
@@ -96,7 +99,7 @@ export class LevelPage implements OnInit {
         this.savePosition(601, 800, 4);
         break;
     }
-
+    this.checkSaveLove();
   }
 
   /**
@@ -130,6 +133,7 @@ export class LevelPage implements OnInit {
     }
 
     this.giaotiep = this.mData[this.mPosition];
+    this.checkSaveLove();
   }
 
   private checkPosition(position: number) {
@@ -188,11 +192,67 @@ export class LevelPage implements OnInit {
   }
 
   likeItem() {
-    this.numberClick += 1;
-    if (this.numberClick % 2 != 0) {
+
+    if (this.idLove === false) {
       this.iconLike = "../assets/icon/heart.svg";
+      this.addLove(this.mData[this.mPosition])
+
     } else {
       this.iconLike = "../assets/icon/heart_up.svg";
+      // this.deleteLove(this.mData[this.mPosition].STT);
     }
+  }
+
+  /**
+   * add giao tiep yeu thich
+   * @param giaotiep 
+   */
+  private addLove(giaotiep: Giaotiep) {
+    let message = "";
+    this.savelove.add(giaotiep)
+      .pipe(first())
+      .subscribe(
+        data => {
+          message = "Luu thanh cong";
+          this.idLove = true;
+          this.showToast(message);
+        },
+        error => {
+          message = "Luu that bai";
+          this.showToast(message);
+        }
+
+      );
+
+  }
+  private deleteLove(id: string) {
+    
+   
+  }
+
+  /**
+   * show toast message
+   * @param message 
+   */
+  async showToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  private checkSaveLove() {
+    this.savelove.getById(this.mData[this.mPosition].STT).subscribe(data => {
+      
+      if (data.length >= 1) {
+        this.idLove = true;
+        this.iconLike = "../assets/icon/heart.svg";
+        //console.log("id === " +data[this.mPosition].id);
+      } else {
+        this.idLove = false;
+        this.iconLike = "../assets/icon/heart_up.svg";
+      }
+    })
   }
 }
