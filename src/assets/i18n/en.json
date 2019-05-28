@@ -22,7 +22,11 @@
         "txt_level_3":"Level 3",
         "txt_level_4":"Level 4",
         "txt_vocabulary" :"Vocabulary",
-        "txt_setting" :"Setting"
+        "txt_setting" :"Setting",
+        "txt_message" :"You have not passed the first level"
+    }  ,
+    "level":{
+        "txt_message" :"You have not passed the first level"
     }
         
 

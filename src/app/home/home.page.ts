@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   txt_vocabulary: string;
   txt_setting: string;
   txt_title : string;
-
+  txt_message: string;
   lang: any;
 
   // home page
@@ -56,6 +56,7 @@ export class HomePage implements OnInit {
       this.txt_vocabulary = this.translate.instant("HOME.txt_vocabulary");
       this.txt_setting = this.translate.instant("HOME.txt_setting");
       this.txt_title = this.translate.instant("HOME.txt_title");
+      this.txt_message = this.translate.instant("HOME.txt_message");
     }, 250);
   }
   /**
@@ -72,7 +73,7 @@ export class HomePage implements OnInit {
     if(parseInt(localStorage.getItem("level")) >= 2){
       this.router.navigate(['/level', { level: 2, nameLevel : this.txt_level2 }]);
     }else{
-     this.showToast("ban chua hoc qua level truoc do");
+     this.showToast(this.txt_message);
     }
     
   }
@@ -83,7 +84,7 @@ export class HomePage implements OnInit {
     if(parseInt(localStorage.getItem("level")) >= 3){
       this.router.navigate(['/level', { level: 3, nameLevel : this.txt_level3 }]);
     }else{
-      this.showToast("ban chua hoc qua level truoc do");
+      this.showToast(this.txt_message);
     }
    
   }
@@ -94,7 +95,7 @@ export class HomePage implements OnInit {
     if(parseInt(localStorage.getItem("level")) >= 4){
       this.router.navigate(['/level', { level: 4, nameLevel : this.txt_level4 }]);
     }else{
-      this.showToast("ban chua hoc qua level truoc do");
+      this.showToast(this.txt_message);
     }
    
     

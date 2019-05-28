@@ -13,6 +13,15 @@
       "postId": 1
     }
   ],
+  "love" :[
+     {
+       "STT": "0",
+       "tiengtrung":"",
+       "tiengviet" : "",
+       "pinjin": ""
+       
+     }
+  ],
   "profile": {
     "name": "typicode"
   }

@@ -1,4 +1,4 @@
-export class Giaotiep{
+export class Love{
     public STT: string;
     public tiengtrung: string;
     public tiengviet : string;
